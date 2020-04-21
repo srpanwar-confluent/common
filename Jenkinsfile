@@ -2,5 +2,7 @@
 
 common {
     upstreamProjects = ['confluentinc/license-file-generator']
-    slackChannel = '#kafka-warn'
+    slackChannel = ''
+    testbreakReporting = false
+    downStreamRepos = ["rest-utils", "support-bundle", "ksql", "newwave"]
 }
