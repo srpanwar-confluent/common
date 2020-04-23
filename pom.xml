@@ -23,7 +23,7 @@
     <groupId>io.confluent</groupId>
     <artifactId>common-parent</artifactId>
     <packaging>pom</packaging>
-    <version>6.0.0-0</version>
+    <version>${revision}</version>
     <name>common</name>
     <organization>
         <name>Confluent, Inc.</name>
@@ -43,6 +43,7 @@
     </licenses>
 
     <properties>
+        <revision>6.0.0-0</revision>
         <!--jacoco prepare-agent needs argLine defined to set this variable. if we don't have a default set then maven gets angry.-->
         <argLine></argLine>
         <avro.version>1.9.2</avro.version>
