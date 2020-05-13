@@ -3,4 +3,5 @@
 common {
     upstreamProjects = ['confluentinc/license-file-generator']
     slackChannel = ''
+    testbreakReporting = false
 }
