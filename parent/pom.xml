@@ -33,6 +33,7 @@
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>common-utils</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>
