@@ -115,6 +115,7 @@
         <!-- Pull the latest base image or use a local image. -->
         <docker.pull-image>false</docker.pull-image>
         <dependency.check.skip>true</dependency.check.skip>
+        <io.confluent.common.version>6.0.0-0</io.confluent.common.version>
     </properties>
 
     <scm>
