@@ -35,22 +35,22 @@
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>build-tools</artifactId>
-            <version>6.0.0-0</version>
+            <version>${io.confluent.common.version}</version>
         </dependency>
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>common-utils</artifactId>
-            <version>6.0.0-0</version>
+            <version>${io.confluent.common.version}</version>
         </dependency>
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>common-config</artifactId>
-            <version>6.0.0-0</version>
+            <version>${io.confluent.common.version}</version>
         </dependency>
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>common-metrics</artifactId>
-            <version>6.0.0-0</version>
+            <version>${io.confluent.common.version}</version>
         </dependency>
     </dependencies>
 

@@ -287,12 +287,12 @@
             <dependency>
                 <groupId>io.confluent</groupId>
                 <artifactId>common-metrics</artifactId>
-                <version>6.0.0-0</version>
+                <version>${io.confluent.common.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.confluent</groupId>
                 <artifactId>common-utils</artifactId>
-                <version>6.0.0-0</version>
+                <version>${io.confluent.common.version}</version>
             </dependency>
 
             <!--test deps-->
@@ -384,7 +384,7 @@
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>assembly-plugin-boilerplate</artifactId>
-            <version>6.0.0-0</version>
+            <version>${io.confluent.common.version}</version>
             <classifier>resources</classifier>
             <type>zip</type>
             <scope>provided</scope>
@@ -421,7 +421,7 @@
                         <dependency>
                             <groupId>io.confluent</groupId>
                             <artifactId>build-tools</artifactId>
-                            <version>6.0.0-0</version>
+                            <version>${io.confluent.common.version}</version>
                         </dependency>
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
@@ -777,7 +777,7 @@
                         <dependency>
                             <groupId>io.confluent</groupId>
                             <artifactId>build-tools</artifactId>
-                            <version>6.0.0-0</version>
+                            <version>${io.confluent.common.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -867,7 +867,7 @@
                                 <configuration>
                                     <skipAssembly>${docker.skip-build}</skipAssembly>
                                     <descriptors>
-                                        <descriptor>target/dependency/assembly-plugin-boilerplate-${project.version}/common-docker-package.xml</descriptor>
+                                        <descriptor>target/dependency/assembly-plugin-boilerplate-${io.confluent.common.version}/common-docker-package.xml</descriptor>
                                     </descriptors>
                                     <archive>
                                         <manifest>
