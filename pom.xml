@@ -47,7 +47,6 @@
         <argLine></argLine>
         <avro.version>1.9.2</avro.version>
         <required.maven.version>3.2</required.maven.version>
-        <confluent.version>${project.version}</confluent.version>
         <kafka.version>6.0.0-ccs-SNAPSHOT</kafka.version>
         <ce.kafka.version>6.0.0-0-ce</ce.kafka.version>
         <easymock.version>4.0.1</easymock.version>
