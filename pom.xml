@@ -284,7 +284,6 @@
                 <version>${ce.kafka.version}</version>
             </dependency>
 
-            <dependency>
             <!--this is our own artifacts, but lets others inherit-->
             <dependency>
                 <groupId>io.confluent</groupId>
