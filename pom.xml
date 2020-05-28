@@ -115,6 +115,8 @@
         <docker.pull-image>false</docker.pull-image>
         <dependency.check.skip>true</dependency.check.skip>
         <io.confluent.common.version>6.0.0-0</io.confluent.common.version>
+        <!-- Remove this property eventually when we get a skip property in the plugin-->
+        <resolver.maven.plugin.phase>validate</resolver.maven.plugin.phase>
     </properties>
 
     <scm>
@@ -668,6 +670,26 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>io.confluent</groupId>
+                <artifactId>resolver-maven-plugin</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <configuration>
+                    <groupId>org.apache.kafka</groupId>
+                    <artifactId>kafka-clients</artifactId>
+                    <!--TODO: this will be different in downstream builds, double check that is behavior we want.-->
+                    <!--TODO: using license version range is temporary for testing-->
+                    <version>${io.confluent.license-file-generator.version}</version>
+                </configuration>
+                <executions>
+                    <execution>
+                    <phase>${resolver.maven.plugin.phase}</phase>
+                        <goals>
+                            <goal>resolve-kafka-range</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <profiles>
@@ -680,6 +702,7 @@
             </activation>
             <properties>
                 <dependency.check.skip>false</dependency.check.skip>
+                <resolver.maven.plugin.phase>none</resolver.maven.plugin.phase>
             </properties>
             <build>
                 <pluginManagement>

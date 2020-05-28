@@ -74,17 +74,19 @@ class CIUpdate:
         group_id = "org.apache.kafka"
         artifact_id = "kafka-clients"
         # TODO: Remove the snapshot version here when done testing.
-        cmd = "mvn --batch-mode io.confluent:resolver-maven-plugin:1.0.0-SNAPSHOT:resolve-kafka-range "
+        cmd = "mvn --batch-mode -Pjenkins io.confluent:resolver-maven-plugin:1.0.0-SNAPSHOT:resolve-kafka-range "
         cmd += "-DgroupId={} ".format(group_id)
         cmd += "-DartifactId={} ".format(artifact_id)
         cmd += "-DversionRange=\"{}\" ".format(version_range)
-        #TODO: Final version of plugin we shouldn't need to specify what version to print
+        # TODO: Final version of plugin we shouldn't need to specify what version to print
+        # TODO: need this tail -1 because we get a bunch of other output in the jenkins job, but maybe should parse the lines and do a sanity check on what we get.
         cmd += "-Dprint{} -q".format(print_method)
         log.info("Resolving the version range for: {}".format(version_range))
         result, stdout = self.run_cmd(cmd, return_stdout=True)
 
         if result:
-            version = stdout.strip()
+            # When run from Jenkins there will be additional output included so we just get the last line of output.
+            version = stdout.strip().splitlines()[-1]
             log.info("Resolved the version range to version: {}".format(version))
             return version
         else:
@@ -93,6 +95,7 @@ class CIUpdate:
 
     def run_cmd(self, cmd, return_stdout=False):
         """Execute a shell command. Return true if successful, false otherwise."""
+        log.info(cmd)
         proc = subprocess.Popen(cmd,
                                 cwd=self.repo_path,
                                 shell=True,
