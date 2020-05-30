@@ -23,7 +23,7 @@
     <groupId>io.confluent</groupId>
     <artifactId>common-parent</artifactId>
     <packaging>pom</packaging>
-    <version>6.0.0-0</version>
+    <version>6.0.0-11</version>
     <name>common</name>
     <organization>
         <name>Confluent, Inc.</name>
@@ -47,8 +47,8 @@
         <argLine></argLine>
         <avro.version>1.9.2</avro.version>
         <required.maven.version>3.2</required.maven.version>
-        <kafka.version>[6.0.0-0-ccs, 6.0.1-0-ccs)</kafka.version>
-        <ce.kafka.version>[6.0.0-0-ce, 6.0.1-0-ce)</ce.kafka.version>
+        <kafka.version>6.0.0-5-ccs</kafka.version>
+        <ce.kafka.version>6.0.0-4-ce</ce.kafka.version>
         <easymock.version>4.0.1</easymock.version>
         <exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
         <spotbugs.version>3.1.12</spotbugs.version>
@@ -58,7 +58,7 @@
         <jackson.bom.version>2.10.2.20200130</jackson.bom.version>
         <gson.version>2.8.5</gson.version>
         <guava.version>28.1-jre</guava.version>
-        <io.confluent.license-file-generator.version>[6.0.0-0, 6.0.1-0)</io.confluent.license-file-generator.version>
+        <io.confluent.license-file-generator.version>6.0.0-3</io.confluent.license-file-generator.version>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
         <junit.version>4.13</junit.version>
         <kafka.scala.version>2.12</kafka.scala.version>
@@ -114,7 +114,7 @@
         <!-- Pull the latest base image or use a local image. -->
         <docker.pull-image>false</docker.pull-image>
         <dependency.check.skip>true</dependency.check.skip>
-        <io.confluent.common.version>6.0.0-0</io.confluent.common.version>
+        <io.confluent.common.version>6.0.0-11</io.confluent.common.version>
         <!-- Remove this property eventually when we get a skip property in the plugin-->
         <resolver.maven.plugin.phase>validate</resolver.maven.plugin.phase>
     </properties>
